@@ -11,26 +11,25 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        VStack {
-            Button(action: {
-                print("Food was delicious!")
-            }) {
-                VStack {
-                    Image("Cat")
-                        .renderingMode(.original)
-                        .resizable()
-                        .scaledToFit()
-                        .shadow(radius: 15)
-                    Text("Feed Cat!")
-                        .font(.system(.headline, design: .rounded))
-                        .padding()
-                        .background(Color.purple)
-                        .cornerRadius(16)
-                        .foregroundColor(.primary)
-                        .shadow(radius: 15)
-                }
+        TabView {
+            BookListView()
+                .tabItem {
+                    Image(systemName: "square.stack.fill")
+                    Text("Books")
             }
-        }
+            
+            KittyNeedsView()
+                .tabItem {
+                    Image(systemName: "heart.circle")
+                    Text("Kitty Needs")
+            }
+            
+            KittySnackPicker()
+                .tabItem {
+                    Image(systemName: "wrench.fill")
+                    Text("Snack Picker")
+            }
+        }.edgesIgnoringSafeArea(.top)
     }
 }
 
