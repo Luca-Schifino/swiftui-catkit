@@ -38,14 +38,14 @@ struct KittyNeedsView: View {
             
             Picker(selection: $selectedPickerIndex,
                    label: EmptyView()) {
-                ForEach(0..<tips.count) { index in
-                    HStack {
-                        Image(self.tips[index].imageName)
-                            .resizable()
-                            .scaledToFit()
-                        Text(self.tips[index].tip)
+                    ForEach(0..<tips.count) { index in
+                        HStack {
+                            Image(self.tips[index].imageName)
+                                .resizable()
+                                .scaledToFit()
+                            Text(self.tips[index].tip)
+                        }
                     }
-                }
             }
             .labelsHidden()
             .padding()

@@ -16,47 +16,47 @@ struct KittySnackPicker: View {
     @State var textValue = ""
     
     var body: some View {
-      NavigationView {
-        Form {
-          Section {
-            Picker(selection: $selectedSnackIndex, label: Text("Snack Type")) {
-              ForEach(0 ..< treats.count) {
-                Text(self.treats[$0].name).tag($0)
-              }
+        NavigationView {
+            Form {
+                Section {
+                    Picker(selection: $selectedSnackIndex, label: Text("Snack Type")) {
+                        ForEach(0 ..< treats.count) {
+                            Text(self.treats[$0].name).tag($0)
+                        }
+                    }
+                    .pickerStyle(DefaultPickerStyle())
+                }
+                
+                Section {
+                    Toggle(isOn: $isOn) {
+                        Text("Would you like Milk?")
+                    }
+                    if isOn {
+                        Text("Milk will cost an extra $0.99")
+                            .foregroundColor(.gray)
+                            .font(Font.system(size: 12))
+                    }
+                }
+                
+                Section {
+                    TextField("Special Requests", text: $textValue)
+                }
+                
+                Section {
+                    Button(action: {
+                        
+                    }) {
+                        HStack {
+                            Image(systemName: "paperplane")
+                                .foregroundColor(.blue)
+                            Text("Place Order")
+                        }
+                    }
+                }
+                .listStyle(GroupedListStyle())
             }
-            .pickerStyle(DefaultPickerStyle())
-          }
-          
-          Section {
-            Toggle(isOn: $isOn) {
-              Text("Would you like Milk?")
-            }
-            if isOn {
-              Text("Milk will cost an extra $0.99")
-                .foregroundColor(.gray)
-                .font(Font.system(size: 12))
-            }
-          }
-          
-          Section {
-            TextField("Special Requests", text: $textValue)
-          }
-          
-          Section {
-            Button(action: {
-              
-            }) {
-              HStack {
-                Image(systemName: "paperplane")
-                  .foregroundColor(.blue)
-                Text("Place Order")
-              }
-            }
-          }
-          .listStyle(GroupedListStyle())
+            .navigationBarTitle(Text("Order Kitty Snacks"))
         }
-        .navigationBarTitle(Text("Order Kitty Snacks"))
-      }
     }
 }
 
