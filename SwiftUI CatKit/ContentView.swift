@@ -10,46 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var selectedPickerIndex = 0
-    
-    let tips = RelaxationTip.demoTips
-    
     var body: some View {
-        VStack {
-            
-            Picker(selection: $selectedPickerIndex,
-                   label: EmptyView()) {
-                ForEach(0..<tips.count) { index in
-                    HStack {
-                        Image(self.tips[index].imageName)
-                            .resizable()
-                            .scaledToFit()
-                        Text(self.tips[index].tip)
-                    }
-                }
+        TabView {
+            KittyNeedsView()
+                .tabItem {
+                    Image(systemName: "heart.circle")
+                    Text("Kitty Needs")
             }
-            .labelsHidden()
-            .padding()
-            
-            Button(action: {
-                print("Food was delicious!")
-            }) {
-                VStack {
-                    Image("Cat")
-                        .renderingMode(.original)
-                        .resizable()
-                        .scaledToFit()
-                        .shadow(radius: 15)
-                    Text("Feed Cat!")
-                        .font(.system(.headline, design: .rounded))
-                        .padding()
-                        .background(Color.purple)
-                        .cornerRadius(16)
-                        .foregroundColor(.primary)
-                        .shadow(radius: 15)
-                }
-            }
-            .frame(width: 300, height: 300)
         }
     }
 }
