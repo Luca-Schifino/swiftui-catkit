@@ -12,6 +12,12 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
+            BookListView()
+                .tabItem {
+                    Image(systemName: "square.stack.fill")
+                    Text("Books")
+            }
+            
             KittyNeedsView()
                 .tabItem {
                     Image(systemName: "heart.circle")
@@ -23,7 +29,7 @@ struct ContentView: View {
                     Image(systemName: "wrench.fill")
                     Text("Snack Picker")
             }
-        }
+        }.edgesIgnoringSafeArea(.top)
     }
 }
 
