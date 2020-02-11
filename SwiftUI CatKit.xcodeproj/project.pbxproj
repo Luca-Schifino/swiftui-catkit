@@ -55,6 +55,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0297AA1223F314A4007CB708 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				0297AA0923F30B12007CB708 /* Book.swift */,
+				0297AA0B23F30B35007CB708 /* BookDetailView.swift */,
+				0297AA0723F30AEF007CB708 /* BookListView.swift */,
+				0297AA0D23F30B5C007CB708 /* BookView.swift */,
+				0297AA0F23F30BA6007CB708 /* HelpView.swift */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		0297AA1323F314B5007CB708 /* Needs */ = {
+			isa = PBXGroup;
+			children = (
+				0297AA0123F305FD007CB708 /* KittyNeedsView.swift */,
+				029A2B4223F1908B00BA23B0 /* RelaxationTip.swift */,
+			);
+			path = Needs;
+			sourceTree = "<group>";
+		};
+		0297AA1423F314DB007CB708 /* Snack */ = {
+			isa = PBXGroup;
+			children = (
+				0297AA0323F308D8007CB708 /* KittySnackPicker.swift */,
+				0297AA0523F308FD007CB708 /* Treat.swift */,
+			);
+			path = Snack;
+			sourceTree = "<group>";
+		};
 		02D67CBC23EC45EC00A117A9 = {
 			isa = PBXGroup;
 			children = (
@@ -75,20 +105,14 @@
 			isa = PBXGroup;
 			children = (
 				02D67CC823EC45EC00A117A9 /* AppDelegate.swift */,
-				02D67CCA23EC45EC00A117A9 /* SceneDelegate.swift */,
-				02D67CCC23EC45EC00A117A9 /* ContentView.swift */,
-				0297AA0723F30AEF007CB708 /* BookListView.swift */,
-				0297AA0B23F30B35007CB708 /* BookDetailView.swift */,
-				0297AA0D23F30B5C007CB708 /* BookView.swift */,
-				0297AA0F23F30BA6007CB708 /* HelpView.swift */,
-				0297AA0123F305FD007CB708 /* KittyNeedsView.swift */,
-				0297AA0323F308D8007CB708 /* KittySnackPicker.swift */,
-				029A2B4223F1908B00BA23B0 /* RelaxationTip.swift */,
-				0297AA0523F308FD007CB708 /* Treat.swift */,
-				0297AA0923F30B12007CB708 /* Book.swift */,
 				02D67CCE23EC45F100A117A9 /* Assets.xcassets */,
-				02D67CD323EC45F100A117A9 /* LaunchScreen.storyboard */,
+				02D67CCC23EC45EC00A117A9 /* ContentView.swift */,
 				02D67CD623EC45F100A117A9 /* Info.plist */,
+				02D67CD323EC45F100A117A9 /* LaunchScreen.storyboard */,
+				02D67CCA23EC45EC00A117A9 /* SceneDelegate.swift */,
+				0297AA1323F314B5007CB708 /* Needs */,
+				0297AA1223F314A4007CB708 /* Book */,
+				0297AA1423F314DB007CB708 /* Snack */,
 				02D67CD023EC45F100A117A9 /* Preview Content */,
 			);
 			path = "SwiftUI CatKit";
