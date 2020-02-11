@@ -17,6 +17,12 @@ struct ContentView: View {
                     Image(systemName: "heart.circle")
                     Text("Kitty Needs")
             }
+            
+            KittySnackPicker()
+                .tabItem {
+                    Image(systemName: "wrench.fill")
+                    Text("Snack Picker")
+            }
         }
     }
 }
