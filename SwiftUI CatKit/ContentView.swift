@@ -10,8 +10,27 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var selectedPickerIndex = 0
+    
+    let tips = RelaxationTip.demoTips
+    
     var body: some View {
         VStack {
+            
+            Picker(selection: $selectedPickerIndex,
+                   label: EmptyView()) {
+                ForEach(0..<tips.count) { index in
+                    HStack {
+                        Image(self.tips[index].imageName)
+                            .resizable()
+                            .scaledToFit()
+                        Text(self.tips[index].tip)
+                    }
+                }
+            }
+            .labelsHidden()
+            .padding()
+            
             Button(action: {
                 print("Food was delicious!")
             }) {
@@ -30,6 +49,7 @@ struct ContentView: View {
                         .shadow(radius: 15)
                 }
             }
+            .frame(width: 300, height: 300)
         }
     }
 }
